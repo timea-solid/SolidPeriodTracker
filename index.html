@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Period tracker Vanilla Javascript with Solid">
+    <meta name="keywords" content="Solid, HTML, CSS, JavaScript">
+    <meta name="author" content="Timea Turdean">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Period tracker</title>
+    <link rel="shortcut icon" type="image/png" href="/images/blood.png">
+   <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css"> 
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/fontawesome.min.css" integrity="sha512-Rcr1oG0XvqZI1yv1HIg9LgZVDEhf2AHjv+9AuD1JXWGLzlkoKDVvE925qySLcEywpMAYA/rkg296MkvqBF07Yw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+</head>
+<body class="main first-page">
+    
+    <img class="logo-img" src="/images/blood.png" /> 
+    <h1>Hello! I'm your period tracker</h1>
+    <span>Let me tell you when to expect your period.</span>
+    <span>And over time I can make statistics for you.</span>
+    <br/>
+    <button id="login-button" type="button" onclick="login()">Login with Solid</button>
+    <br/>
+
+    <span class="registration">If you do not have a Solid account:</span>
+    <a class="registration" href="https://solidproject.org/users/get-a-pod" target="_blank"> Get one</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/n3-browserify@1.11.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@inrupt/solid-client-authn-browser@1.11.2/dist/solid-client-authn.bundle.js"></script>
+    <script src="/logic/utils.js"></script>
+    <script src="/logic/userData.js"></script>
+    <script src="/logic/authentication.js"></script>
+    <script src="/logic/workingWithSolidPod.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 

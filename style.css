@@ -1,0 +1,16 @@
+.first-page {
+    align-items: center;
+}
+.first-page h1 {
+    text-align: center;
+}
+
+.first-page .logo-img {
+    width: 9vw;
+    margin-top: 5%;
+    min-width: 30%;
+  }
+
+  .first-page .registration {
+ font-size: 1rem;
+  }
