@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@inrupt/solid-client-authn-browser": "^1.12.1",
     "@inrupt/solid-ui-react": "^2.8.0",
     "next": "12.2.3",
     "react": "18.2.0",
