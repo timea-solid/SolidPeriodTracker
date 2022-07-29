@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier"
+  ],
+}
