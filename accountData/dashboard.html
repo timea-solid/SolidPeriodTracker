@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Timea Turdean">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account dashboard</title>
+    <link rel="stylesheet" href="calendar.css">
+    <link rel="shortcut icon" type="image/png" href="/images/blood.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/fontawesome.min.css" integrity="sha512-Rcr1oG0XvqZI1yv1HIg9LgZVDEhf2AHjv+9AuD1JXWGLzlkoKDVvE925qySLcEywpMAYA/rkg296MkvqBF07Yw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="container">
+    <header class="header">
+        <div class="header-left">
+            <img class="logo-img" src="../images/solid-emblem.svg" /> 
+        </div>
+        <div class="header-center">
+            <p class="title">Welcome <span id="username"></span></p>
+        </div>
+        <div class="header-right" id="loginStatusArea"></div>
+    </header>
+
+    <div class="main">
+
+        <form>
+            <table class="month-table">
+                <tr>
+                    <td>
+                        <div id="current-calendar"></div>
+                    </td>
+                    <td>
+                        <div id="next-calendar"></div>
+                    </td>
+                </tr>
+            </table>
+            
+        </form>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/plugin/weekOfYear.min.js" integrity="sha512-r6PdM7UHea0mdHsME1+5kfQdZLoxsFFOqFUXJ/9mf6lIhVtF2NGivqK7pS1IW9FRyRv/OS8U1NSRJ68qZv7Sug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/plugin/weekday.min.js" integrity="sha512-BHA0hDHBu/DwzTGSOZViRzptvUCk80ik7afisRZuQkh1Rm38DVN4VJ0+oTgb7gtPTqLyhrnV60ULJh8gf2x2QA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/dayjs.min.js" integrity="sha512-bwD3VD/j6ypSSnyjuaURidZksoVx3L1RPvTkleC48SbHCZsemT3VKMD39KknPnH728LLXVMTisESIBOAb5/W0Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>></script>
+<script>dayjs().format()</script>
+<script type="module" src="./calendar.js"></script>
+</body>
+</html> 

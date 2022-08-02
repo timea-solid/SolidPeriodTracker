@@ -21,13 +21,10 @@ const Home: NextPage = () => {
       <span className="registration">If you do not have a Solid account:</span>
       <a className="registration" href="https://solidproject.org/users/get-a-pod" target="_blank"> Get one</a>
 
-      {/* <script src="https://cdn.jsdelivr.net/npm/n3-browserify@1.11.1"></script> */}
-      {/* <script src="https://cdn.jsdelivr.net/npm/@inrupt/solid-client-authn-browser@1.11.2/dist/solid-client-authn.bundle.js"></script>
       <script src="./logic/utils.js"></script>
       <script src="./logic/userData.js"></script>
       <script src="./logic/authentication.js"></script>
       <script src="./logic/workingWithSolidPod.js"></script>
-      <script src="./app.js"></script> */}
     </div>
   )
 }
