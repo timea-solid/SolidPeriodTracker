@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Timea Turdean">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Period tracker</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/fontawesome.min.css" integrity="sha512-Rcr1oG0XvqZI1yv1HIg9LgZVDEhf2AHjv+9AuD1JXWGLzlkoKDVvE925qySLcEywpMAYA/rkg296MkvqBF07Yw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="container">
+    <header class="header">
+        <div class="header-left">
+            <img class="logo-img" src="/images/solid-emblem.svg" /> 
+        </div>
+        <div class="header-center">
+            <h1 class="title">Lets get started!</h1>
+        </div>
+        <div class="header-right"></div>
+    </header>
+
+    <div class="main">
+    
+        <h3>Welcome <span id="username"></span>!</h3>
+
+        <span>On what date did your last period start?</span>
+        <input id="periodStart" type="date">
+        <br/>
+        <span>On what date did your last period end?</span>
+        <input id="periodEnd" type="date">
+        <br/>
+        <button id="newuser-button" type="button" onclick="registerNewUser()">Start tracking</button>
+        <button type="button" onclick="logout()">Log out</button>
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@inrupt/solid-client-authn-browser@1.11.2/dist/solid-client-authn.bundle.js"></script>    
+    <script src="../logic/utils.js"></script>
+    <script src="../logic/userData.js"></script>
+    <script src="../logic/authentication.js"></script>
+    <script src="../logic/workingWithSolidPod.js"></script>
+    <script type="text/javascript" src="registration.js"></script>
+</body>
+</html> 

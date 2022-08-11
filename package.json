@@ -9,8 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@inrupt/solid-client-authn-browser": "^1.12.1",
     "@inrupt/solid-ui-react": "^2.8.0",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.9.3",
     "next": "12.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
