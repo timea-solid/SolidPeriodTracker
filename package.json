@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.0",
     "@emotion/server": "^11.10.0",
     "@emotion/styled": "^11.10.0",
+    "@fontsource/roboto": "^4.5.8",
     "@inrupt/solid-client-authn-browser": "^1.12.1",
     "@inrupt/solid-ui-react": "^2.8.0",
     "@mui/icons-material": "^5.8.4",
