@@ -63,12 +63,30 @@ export async function createSolidContainer(url:string, name:string) {
 //   return findUserStorage(url.href);
 // }
 
-export function performLogin(loginURLhref:string) {
+export function performLogin() {
+  const loginURLhref = getLogInURL();
+
+  if (!loginURLhref)
+      return null;
+
     login({
         oidcIssuer: loginURLhref,
         redirectUrl: window.location.href,
         clientName: 'Solid Period Tracker'
     })
+}
+
+function getLogInURL() {
+  const url = prompt("What is your Solid login URL? Example: https://timeasolidweb.solidweb.org/");
+
+  if (!url)
+      return null;
+  
+  const loginURL = new URL(url);
+  loginURL.hash = '';
+  loginURL.pathname = '';
+
+  return loginURL.href;
 }
 
 // export async function performLogout() {
