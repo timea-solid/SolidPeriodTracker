@@ -11,12 +11,12 @@ const Home: NextPage = () => {
   const { session } = useSession();
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{ marginTop: '20px' }}>
       <Image src="/images/blood.png" height={240} width={240} /> 
-      <Typography align="center" variant="h2" component="div" gutterBottom>Hello! I'm your period tracker</Typography>
+      <Typography align="center" component="div" gutterBottom sx={{ fontWeight: 'medium' }} variant="h2">Hello! I'm your period tracker</Typography>
       <Typography variant="h5" component="div" gutterBottom>Let me tell you when to expect your period.</Typography>
       <Typography variant="h5" component="div" gutterBottom>And over time I can make statistics for you.</Typography>
-      <Button endIcon={<LoginIcon />} onClick={() => performLogin()} variant="contained">Login with Solid</Button>
+      <Button endIcon={<LoginIcon />} fullWidth={true} onClick={() => performLogin()} variant="contained">Login with Solid</Button>
       <br />
       <Typography variant="h5" component="div" display="inline" gutterBottom>If you do not have a Solid account:</Typography>
       <a href="https://solidproject.org/users/get-a-pod" target="_blank"> Get one</a>
