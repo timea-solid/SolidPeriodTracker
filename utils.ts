@@ -1,6 +1,6 @@
 import { IPersonProfileData } from "./Interface";
 import { handleIncomingRedirect, login, fetch, getDefaultSession } from '@inrupt/solid-client-authn-browser'
-
+import { getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid-client";
 
 export function isSuccessfulStatusCode(statusCode:number) {
   return Math.floor(statusCode / 100) === 2;
@@ -63,17 +63,22 @@ export async function createSolidContainer(url:string, name:string) {
 //   return findUserStorage(url.href);
 // }
 
-export function performLogin() {
+export async function performLogin() {
   const loginURLhref = getLogInURL();
 
   if (!loginURLhref)
       return null;
 
-    login({
-        oidcIssuer: loginURLhref,
-        redirectUrl: window.location.href,
-        clientName: 'Solid Period Tracker'
-    })
+ login({
+      oidcIssuer: loginURLhref,
+      redirectUrl: window.location.href,
+      clientName: 'Solid Period Tracker'
+  })
+
+  await handleIncomingRedirect({ restorePreviousSession: true });
+  const session = getDefaultSession();
+  console.log("SESSION IS");
+  console.log(session.info.isLoggedIn);
 }
 
 function getLogInURL() {
