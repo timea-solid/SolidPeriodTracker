@@ -10,12 +10,12 @@ import { getPodUrlAll, getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid
 
 const Home: NextPage = () => {
   let [loggedIn, setLoggedIn] = useState(false);
+  const session = getDefaultSession();
 
   async function checkLogin() {
     await handleIncomingRedirect({ restorePreviousSession: true }).then((info) => {
       console.log(`Logged in with WebID ${info?.webId}`);
     })
-    const session = getDefaultSession();
     if(session.info.isLoggedIn) {
       setLoggedIn(true);
       if(typeof session.info.webId === "string") {
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         console.log("mypods", mypods);
       }
     }
-    console.log("SESSION IS");
+    console.log("Checked login, SESSION IS");
     console.log(session.info);
   }
 
