@@ -2,17 +2,14 @@ import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image';
-import { DatasetProvider, useSession } from "@inrupt/solid-ui-react";
 import { performLogin } from '../utils';
-import Navbar from '../components/navbar';
 import LoginIcon from '@mui/icons-material/Login';
 import { Button, Container, Typography } from '@mui/material';
 import { handleIncomingRedirect, login, fetch, getDefaultSession } from '@inrupt/solid-client-authn-browser'
-import { getContainedResourceUrlAll, getPodUrlAll, getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid-client";
+import { getPodUrlAll, getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid-client";
 
 const Home: NextPage = () => {
   let [loggedIn, setLoggedIn] = useState(false);
-  const { session } = useSession();
 
   async function checkLogin() {
     await handleIncomingRedirect({ restorePreviousSession: true }).then((info) => {
@@ -31,7 +28,6 @@ const Home: NextPage = () => {
   }
 
   useEffect(() => {
-    // Update the document title using the browser API
     checkLogin();
   }, []);
 

@@ -1,6 +1,5 @@
 import { IPersonProfileData } from "./Interface";
 import { handleIncomingRedirect, login, fetch, getDefaultSession } from '@inrupt/solid-client-authn-browser'
-import { getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid-client";
 
 export function isSuccessfulStatusCode(statusCode:number) {
   return Math.floor(statusCode / 100) === 2;
