@@ -6,7 +6,7 @@ import { performLogin } from '../utils';
 import LoginIcon from '@mui/icons-material/Login';
 import { Button, Container, Typography } from '@mui/material';
 import { handleIncomingRedirect, login, fetch, getDefaultSession } from '@inrupt/solid-client-authn-browser'
-import { getPodUrlAll, getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid-client";
+import { createContainerAt, createSolidDataset, getPodUrlAll, getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid-client";
 
 const Home: NextPage = () => {
   let [loggedIn, setLoggedIn] = useState(false);
@@ -21,6 +21,10 @@ const Home: NextPage = () => {
       if(typeof session.info.webId === "string") {
         const mypods = await getPodUrlAll(session.info.webId, { fetch: fetch });
         console.log("mypods", mypods);
+        let newContainer = mypods[0] + "periodTracker"
+        await createContainerAt(newContainer, { fetch: fetch });
+        const dataset = await getSolidDataset(mypods[0], { fetch: fetch })
+        console.log("Containers", dataset.graphs.default)
       }
     }
     console.log("Checked login, SESSION IS");
