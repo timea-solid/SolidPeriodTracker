@@ -77,7 +77,7 @@ export async function performLogin() {
 
   await handleIncomingRedirect({ restorePreviousSession: true });
   const session = getDefaultSession();
-  console.log("SESSION IS");
+  console.log("Performed login, SESSION IS");
   console.log(session.info.isLoggedIn);
 }
 
