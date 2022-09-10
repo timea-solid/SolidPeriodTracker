@@ -19,6 +19,9 @@ const Home: NextPage = () => {
     if(session.info.isLoggedIn) {
       setLoggedIn(true);
       if(typeof session.info.webId === "string") {
+        //at this step I would like to check if the Pod user has a container called 'periodTracker' and only if not prompt them to register meaning -> create a container and ask some basic period related questions which every app does. And save those infos as settings in their pod. 
+        //I had in mind to redirect the user to the refistrationIntro.html page for all this.
+        //after registration and/or login of an already registered user - redirect them to the dashboard page where they see the current month as a calendar and teh next month. And other buttons for options...
         const mypods = await getPodUrlAll(session.info.webId, { fetch: fetch });
         console.log("mypods", mypods);
         let newContainer = mypods[0] + "periodTracker"
