@@ -1,5 +1,6 @@
 import { IPersonProfileData } from "./Interface";
 import { handleIncomingRedirect, login, fetch, getDefaultSession, logout } from '@inrupt/solid-client-authn-browser'
+import Router from 'next/router'
 
 export function isSuccessfulStatusCode(statusCode:number) {
   return Math.floor(statusCode / 100) === 2;
@@ -95,6 +96,7 @@ function getLogInURL() {
 
 export async function performLogout() {
     await logout();
+    Router.reload();
 }
 
 // export const fetchUserProfile = async (
