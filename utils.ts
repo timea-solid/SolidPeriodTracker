@@ -1,5 +1,6 @@
 import { IPersonProfileData } from "./Interface";
-import { handleIncomingRedirect, login, fetch, getDefaultSession } from '@inrupt/solid-client-authn-browser'
+import { handleIncomingRedirect, login, fetch, getDefaultSession, logout } from '@inrupt/solid-client-authn-browser'
+import Router from 'next/router'
 
 export function isSuccessfulStatusCode(statusCode:number) {
   return Math.floor(statusCode / 100) === 2;
@@ -68,7 +69,7 @@ export async function performLogin() {
   if (!loginURLhref)
       return null;
 
- login({
+  login({
       oidcIssuer: loginURLhref,
       redirectUrl: window.location.href,
       clientName: 'Solid Period Tracker'
@@ -93,9 +94,10 @@ function getLogInURL() {
   return loginURL.href;
 }
 
-// export async function performLogout() {
-//     await logout();
-// }
+export async function performLogout() {
+    await logout();
+    Router.reload();
+}
 
 // export const fetchUserProfile = async (
 //     webId: string

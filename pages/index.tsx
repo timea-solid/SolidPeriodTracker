@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image';
-import { performLogin } from '../utils';
+import { performLogin, performLogout } from '../utils';
 import LoginIcon from '@mui/icons-material/Login';
 import { Button, Container, Typography } from '@mui/material';
 import { handleIncomingRedirect, login, fetch, getDefaultSession } from '@inrupt/solid-client-authn-browser'
@@ -54,7 +54,8 @@ const Home: NextPage = () => {
       {loggedIn && (
         <>
           <Typography variant="h3" component="div" gutterBottom>You are signed in with WebID:</Typography>
-          <Typography variant="h4" component="div" gutterBottom>{session.info?.webId}</Typography>
+          <Typography variant="h4" component="div" gutterBottom>{session?.info?.webId}</Typography>
+          <Button endIcon={<LoginIcon />} fullWidth={true} onClick={() => performLogout()} variant="contained">Logout</Button>
         </>
       )}
     </Container>
