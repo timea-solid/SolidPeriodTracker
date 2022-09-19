@@ -52,7 +52,7 @@ const Home: NextPage = () => {
           containerNames.push(containerName)
         })
         console.log("Containers", containerNames)
-        if(containerNames.includes('periodTracker')) {
+        if(!containerNames.includes('periodTracker')) {
           router.push('/registrationIntro')
         }
       }
