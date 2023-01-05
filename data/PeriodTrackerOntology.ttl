@@ -1,0 +1,96 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix app: <https://timea.solidcommunity.net/datamodel/app#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+###
+# Ontology metadata
+###
+
+<https://timea.solidcommunity.net/SolidPeriodTracker/data/SolidPeriodTrackerOntology> a owl:Ontology;
+  dcterms:created "2023-01-05T21:01:10.093Z"^^xsd:dateTime;
+  dcterms:creator <https://timea.solidcommunity.net/profile/card#me>;
+  app:baseUrl "https://timea.solidcommunity.net/SolidPeriodTracker/data/SolidPeriodTrackerOntology";
+  app:resourceSeparator "#";
+  app:containsAttributeProperty <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#startDate>,
+    <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#endDate>, <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#periodLength>, <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#averageCycleLength>, <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#averagePeriodLength>, <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#cycleLength>;
+  app:containsCustomType <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#Period-Entry>, <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#Statistic>, <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#Period-Statistic>, <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#Cycle-Statistic>;
+  
+  app:hasLanguagePreference <urn:node1fh8aoltax8205438>;
+  app:identifier "SolidPeriodTrackerOntology";
+  rdfs:label "Solid Period Tracker Ontology"@en .
+
+<urn:node1fh8aoltax8205438> a app:LanguagePreference;
+  app:languagePreferencePriority "0"^^xsd:int;
+  app:languagePreferenceValue "en" .
+
+###
+# Ontology classes
+###
+
+<https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#PeriodEntry> a owl:Class;
+  dcterms:created "2023-01-05T21:01:10.093Z"^^xsd:dateTime;
+  dcterms:creator <https://timea.solidcommunity.net/profile/card#me>;
+  rdfs:label "Period entry" .
+
+<https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#Statistic> a owl:Class;
+  dcterms:created "2023-01-05T21:01:10.093Z"^^xsd:dateTime;
+  dcterms:creator <https://timea.solidcommunity.net/profile/card#me>;
+  rdfs:label "Statistic" .
+
+<https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#PeriodStatistic> a owl:Class;
+  dcterms:created "2023-01-05T21:01:10.093Z"^^xsd:dateTime;
+  dcterms:creator <https://timea.solidcommunity.net/profile/card#me>;
+  rdfs:label "Period statistic" ;
+  rdfs:subClassOf <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#Statistic> .
+
+<https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#CycleStatistic> a owl:Class;
+  dcterms:created "2023-01-05T21:01:10.093Z"^^xsd:dateTime;
+  dcterms:creator <https://timea.solidcommunity.net/profile/card#me>;
+  rdfs:label "Cycle statistic" ;
+  rdfs:subClassOf <https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#Statistic> .
+
+###
+# Ontology attributes which are also realationships but range is rdfs:Resource or others.
+###
+
+<https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#startDate> a owl:DatatypeProperty;
+  dcterms:created "2023-01-05T21:01:10.093Z"^^xsd:dateTime;
+  dcterms:creator <https://timea.solidcommunity.net/profile/card#me>;
+  rdfs:label "Start date"@en;
+  rdfs:range xsd:dateTime .
+
+<https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#endDate> a owl:DatatypeProperty;
+  dcterms:created "2023-01-05T21:01:10.093Z"^^xsd:dateTime;
+  dcterms:creator <https://timea.solidcommunity.net/profile/card#me>;
+  rdfs:label "End date"@en;
+  rdfs:range xsd:dateTime .
+
+<https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#periodLength> a owl:DatatypeProperty;
+  dcterms:created "2023-01-05T21:01:10.093Z"^^xsd:dateTime;
+  dcterms:creator <https://timea.solidcommunity.net/profile/card#me>;
+  rdfs:label "Period length"@en;
+  rdfs:range xsd:integer .
+
+<https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#averageCycleLength> a owl:DatatypeProperty;
+  dcterms:created "2023-01-05T21:01:10.093Z"^^xsd:dateTime;
+  dcterms:creator <https://timea.solidcommunity.net/profile/card#me>;
+  rdfs:label "Averge cycle length"@en;
+  rdfs:range xsd:integer .
+
+<https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#averagePeriodLength> a owl:DatatypeProperty;
+  dcterms:created "2023-01-05T21:01:10.093Z"^^xsd:dateTime;
+  dcterms:creator <https://timea.solidcommunity.net/profile/card#me>;
+  rdfs:label "Averge period length"@en;
+  rdfs:range xsd:integer .
+
+<https://timea.solidcommunity.net/HelloWorld/data/SolidHelloWorldOntology#cycleLength> a owl:DatatypeProperty;
+  dcterms:created "2023-01-05T21:01:10.093Z"^^xsd:dateTime;
+  dcterms:creator <https://timea.solidcommunity.net/profile/card#me>;
+  rdfs:label "Cycle length"@en;
+  rdfs:range xsd:integer .
