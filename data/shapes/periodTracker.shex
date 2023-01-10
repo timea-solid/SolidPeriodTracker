@@ -1,0 +1,34 @@
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX app: <https://timea.solidcommunity.net/appvocab/app#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX pt: <https://timea.solidcommunity.net/SolidPeriodTracker/data/SolidPeriodTrackerVocabulary#>
+PREFIX period: <https://timea.solidcommunity.net/SolidPeriodTracker/data/PeriodData#>
+
+
+period:PeriodEntry EXTRA a {
+    a [pt:PeriodEntry] ;
+    pt:startDate xsd:dateTime ;
+    pt:endDate xsd:dateTime
+}
+
+period:MenstrualCycleEntry EXTRA a {
+    a [pt:MenstrualCycleEntry] ;
+    pt:hasPeriod @period:PeriodEntry ;
+    pt:startDate xsd:dateTime ;
+    pt:periodLength xsd:integer ? ;
+    pt:cycleLength xsd:integer ?
+}
+
+period:CycleStatistic EXTRA a {
+    a [pt:CycleStatistic]  ;
+    pt:year xsd:integer ;
+    pt:numberOfMonths xsd:integer ? ;
+    pt:averageCycleLength xsd:integer ? ;
+    pt:averagePeriodLength xsd:integer ?
+}
