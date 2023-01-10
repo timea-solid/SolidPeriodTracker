@@ -1,4 +1,4 @@
-const BASE_URL = "https://timea.solidcommunity.net/SolidPeriodTracker/data/SolidPeriodTrackerOntology";
+const BASE_URL = "https://timea.solidcommunity.net/SolidPeriodTracker/data/SolidPeriodTrackerVocabulary";
 const RESOURCE_SEPARATOR = "#";
 
 //Ontology classes 

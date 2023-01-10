@@ -5,9 +5,9 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix app: <https://timea.solidcommunity.net/datamodel/app#> .
+@prefix app: <https://timea.solidcommunity.net/appvocab/app#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix pt: <https://timea.solidcommunity.net/SolidPeriodTracker/data/SolidPeriodTrackerOntology#> .
+@prefix pt: <https://timea.solidcommunity.net/SolidPeriodTracker/data/SolidPeriodTrackerVocabulary#> .
 @prefix : <#> . # is actually <https://timea.solidcommunity.net/SolidPeriodTracker/data/PeriodData#> .
 
 :36185c1d-261d-4351-aa97-a98bbd0b6b74 a pt:MenstrualCycleEntry ;
