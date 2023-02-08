@@ -1,10 +1,37 @@
 {
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "next/core-web-vitals",
     "airbnb",
-    "prettier"
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended"
   ],
-  "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier", "react"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      { "js": "never", "jsx": "never", "ts": "never", "tsx": "never" }
+    ],
+    "indent": ["error", 2],
+    "prettier/prettier": ["error"],
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "react/jsx-one-expression-per-line": [0],
+    "react/jsx-props-no-spreading": "off",
+    "react/prefer-stateless-function": [1],
+    "react/static-property-placement": [1, "property assignment"]
+  }
 }
