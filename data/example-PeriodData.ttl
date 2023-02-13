@@ -1,0 +1,46 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix app: <https://timea.solidcommunity.net/appvocab/app#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pt: <https://timea.solidcommunity.net/SolidPeriodTracker/data/SolidPeriodTrackerVocabulary#> .
+@prefix : <#> . # is actually <https://timea.solidcommunity.net/SolidPeriodTracker/data/PeriodData#> .
+
+:36185c1d-261d-4351-aa97-a98bbd0b6b74 a pt:MenstrualCycleEntry ;
+    pt:hasPeriod :898b5242-c753-48c7-9e51-1b829cdb08ce ;
+    pt:startDate "2022-12-05T21:01:10.093Z"^^xsd:dateTime;
+    pt:periodLength "6"^^xsd:integer ; #writen when period is marked as done
+    pt:cycleLength "26"^^xsd:integer . #written when a new priod starts
+
+# period records
+:898b5242-c753-48c7-9e51-1b829cdb08ce a pt:PeriodEntry ;
+    pt:startDate "2022-12-05T21:01:10.093Z"^^xsd:dateTime;
+    pt:endDate "2022-12-11T21:01:10.093Z"^^xsd:dateTime.
+
+:ecd39370-ec2f-4298-a040-3bde8f6609a4 a pt:PeriodEntry ;
+    pt:startDate "2022-11-05T21:01:10.093Z"^^xsd:dateTime;
+    pt:endDate "2022-11-11T21:01:10.093Z"^^xsd:dateTime;
+    pt:periodLength "6"^^xsd:integer.
+
+:37ad386e-9ddb-43d8-aeb6-bcdfbe4dbf8f a pt:PeriodEntry ;
+    pt:startDate "2022-10-05T21:01:10.093Z"^^xsd:dateTime;
+    pt:endDate "2022-10-11T21:01:10.093Z"^^xsd:dateTime.
+
+#this data modeling will allow SPARQL queries something like:
+#get all period entries in year 2022
+#SELECT ?periods WHERE {
+#    ?periods a pt:PerioEntry 
+#    ?periods pt:startDate ?startDate
+#    FILTER ( ?startDate > "2022-01-01T00:00:00.000Z"^^xsd:dateTime &&
+#    ?startDate < "2023-01-01T00:00:00.000Z"^^xsd:dateTime)
+#}
+
+:ada642e0-e6a2-47f5-8728-10daf41740d7 a pt:CycleStatistic ; #created when a new menstrual cycle is created and updated each month
+    pt:year "2022"^^xsd:integer;
+    pt:numberOfMonths "3"^^xsd:integer;
+    pt:averageCycleLength "26"^^xsd:integer ;
+    pt:averagePeriodLength "6"^^xsd:integer.
