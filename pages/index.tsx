@@ -1,14 +1,17 @@
-import { useState, useEffect } from 'react'
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { performLogin, performLogout } from '../utils';
 import LoginIcon from '@mui/icons-material/Login';
 import { Button, Container, Typography } from '@mui/material';
-import { handleIncomingRedirect, login, fetch, getDefaultSession } from '@inrupt/solid-client-authn-browser'
-import { createContainerAt, createSolidDataset, getPodUrlAll, getSolidDataset, saveSolidDatasetAt } from "@inrupt/solid-client";
+import {
+  handleIncomingRedirect,
+  fetch,
+  getDefaultSession
+} from '@inrupt/solid-client-authn-browser';
+import { createContainerAt, getPodUrlAll } from '@inrupt/solid-client';
+import { performLogin, performLogout } from '../utils';
 
 const Home: NextPage = () => {
   let [loggedIn, setLoggedIn] = useState(false)
@@ -63,31 +66,73 @@ const Home: NextPage = () => {
     checkLogin();
   }, []);
 
-
   return (
     <Container maxWidth="md" sx={{ marginTop: '20px' }}>
-      <Image src="/images/blood.png" height={240} width={240} /> 
-      <Typography align="center" component="div" gutterBottom sx={{ fontWeight: 'medium' }} variant="h2">Hello! I'm your period tracker</Typography>
-      <Typography variant="h5" component="div" gutterBottom>Let me tell you when to expect your period.</Typography>
-      <Typography variant="h5" component="div" gutterBottom>And over time I can make statistics for you.</Typography>
+      <Image src="/images/blood.png" height={240} width={240} />
+      <Typography
+        align="center"
+        component="div"
+        gutterBottom
+        sx={{ fontWeight: 'medium' }}
+        variant="h2"
+      >
+        Hello! I&apos;m your period tracker
+      </Typography>
+      <Typography variant="h5" component="div" gutterBottom>
+        Let me tell you when to expect your period.
+      </Typography>
+      <Typography variant="h5" component="div" gutterBottom>
+        And over time I can make statistics for you.
+      </Typography>
       {!loggedIn && (
         <>
-          <Button endIcon={<LoginIcon />} fullWidth={true} onClick={() => performLogin()} variant="contained">Login with Solid</Button>
+          <Button
+            endIcon={<LoginIcon />}
+            fullWidth
+            onClick={() => performLogin()}
+            variant="contained"
+          >
+            Login with Solid
+          </Button>
           <br />
-          <Typography variant="h5" component="div" display="inline" gutterBottom>If you do not have a Solid account:</Typography>
-          <a href="https://solidproject.org/users/get-a-pod" target="_blank"> Get one</a>
+          <Typography
+            variant="h5"
+            component="div"
+            display="inline"
+            gutterBottom
+          >
+            If you do not have a Solid account:
+          </Typography>
+          <a
+            href="https://solidproject.org/users/get-a-pod"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {' '}
+            Get one
+          </a>
         </>
-        )
-      }
+      )}
       {loggedIn && (
         <>
-          <Typography variant="h3" component="div" gutterBottom>You are signed in with WebID:</Typography>
-          <Typography variant="h4" component="div" gutterBottom>{session?.info?.webId}</Typography>
-          <Button endIcon={<LoginIcon />} fullWidth={true} onClick={() => performLogout()} variant="contained">Logout</Button>
+          <Typography variant="h3" component="div" gutterBottom>
+            You are signed in with WebID:
+          </Typography>
+          <Typography variant="h4" component="div" gutterBottom>
+            {session?.info?.webId}
+          </Typography>
+          <Button
+            endIcon={<LoginIcon />}
+            fullWidth
+            onClick={() => performLogout()}
+            variant="contained"
+          >
+            Logout
+          </Button>
         </>
       )}
     </Container>
-  )
+  );
 }
 
-export default Home
+export default Home;

@@ -69,7 +69,7 @@ MyDocument.getInitialProps = async (ctx) => {
       enhanceApp: (App: any) =>
         function EnhanceApp(props) {
           return <App emotionCache={cache} {...props} />;
-        },
+        }
     });
 
   const initialProps = await Document.getInitialProps(ctx);
@@ -87,6 +87,6 @@ MyDocument.getInitialProps = async (ctx) => {
 
   return {
     ...initialProps,
-    emotionStyleTags,
+    emotionStyleTags
   };
 };
